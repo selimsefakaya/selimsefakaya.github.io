@@ -490,7 +490,7 @@ function doneTask(e) {
     taskContent = task.children[0].children[0].textContent;
 
     if (e.target.className === "material-symbols-outlined done") {
-        if (confirm("Conratz!\nYou have completed the task. Are you sure you want to remove it from the list?")) {
+        if (confirm("Congratz!\nYou have completed the task. Are you sure you want to remove it from the list?")) {
             createDoneTask(task);
             task.remove();
             // Silinecek elemanın içerik adı, storage'da kayıtlı olduğu için bunu çekmek gerekir:
@@ -569,7 +569,7 @@ function closeInfoBox(e) {
             width: "0",
             height: "0",
             top: "4%",
-            left: "104%",
+            left: "105%",
         }, 400
 
     )

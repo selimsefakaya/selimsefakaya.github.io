@@ -544,6 +544,14 @@ h4 {
         width:600px;
         padding: 0 15px;
     }
+    .deleted-tasks, .done-tasks {
+        width:100%;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    .deleted-tasks {
+        margin-bottom: 30px;
+    }
     .input-box {
         width:90.93%;
     }
@@ -560,6 +568,14 @@ h4 {
         min-width: 410px;
         width:98%;
         padding:0 10px
+    }
+    .deleted-tasks, .done-tasks {
+        width:100%;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    .deleted-tasks {
+        margin-bottom: 30px;
     }
     .input-box{
         width:87%;
