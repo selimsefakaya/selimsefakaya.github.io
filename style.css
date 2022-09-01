@@ -328,9 +328,10 @@ h4 {
     width:100%;
 }
 
-/* .removed-li:hover {
-    background-color:rgba(92, 91, 91, 0.05)
-} */
+.task-btns {
+    display: flex;
+    gap: 2px;
+}
 
 .done-li {
     background-color:yellowgreen;
@@ -554,8 +555,7 @@ h4 {
         font-size: 12px;
     }
     body{
-        min-width: 410px;
-        width:98%;
+        width:100%;
         padding:0 10px
     }
     .deleted-tasks, .done-tasks {

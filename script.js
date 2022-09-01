@@ -183,10 +183,13 @@ function createItem(newTodo) {
     // delete için div oluşturmak
     const divDelete = document.createElement("div");
     divDelete.classList = "task-delete-box";
+    const divButton = document.createElement("div");
     divDelete.appendChild(a);
+    divButton.className = "task-btns";
     li.appendChild(divTask);
-    li.appendChild(divDelete);
-    li.appendChild(divADone);
+    divButton.appendChild(divDelete);
+    divButton.appendChild(divADone);
+    li.appendChild(divButton)
     taskList.insertBefore(li, taskList.children[0]);
 }
 
@@ -206,14 +209,14 @@ function addNewItem(e) {
 
 
 function deleteItem(e) {
-    const task = e.target.parentElement.parentElement.parentElement;
+    const task = e.target.parentElement.parentElement.parentElement.parentElement;
     taskContent = task.children[0].children[0].textContent;
 
     if (e.target.className === "material-symbols-outlined delete") {
         createDeletedTask(task);
         task.remove();
         // Silinecek elemanın içerik adı, storage'da kayıtlı olduğu için bunu çekmek gerekir:
-        deleteTodoFromLS(e.target.parentElement.parentElement.parentElement.children[0].textContent);
+        deleteTodoFromLS(e.target.parentElement.parentElement.parentElement.parentElement.children[0].textContent);
     }
     e.preventDefault();
 }
@@ -223,6 +226,8 @@ function createDeletedTask(task) {
     const delTask = document.createElement("li");
     delTask.className = "removed-li";
     delTask.innerHTML = task.children[0].outerHTML;
+    const divButton = document.createElement("div");
+    divButton.className = "task-btns"
     const divRestore = document.createElement("div");
     divRestore.className = "task-delete-box";
     divRestore.innerHTML = `<a href="#" class="delete-task">
@@ -233,8 +238,9 @@ function createDeletedTask(task) {
     divDel.innerHTML = `<a href="#" class="delete-task">
                             <span class="material-symbols-outlined delete">close</span>
                         </a>`
-    delTask.appendChild(divDel);
-    delTask.appendChild(divRestore);
+    divButton.appendChild(divDel);
+    divButton.appendChild(divRestore);
+    delTask.appendChild(divButton);
     deletedList.insertBefore(delTask, deletedList.children[0]);
     setItemToDeletedLS(taskContent);
 }
@@ -247,6 +253,8 @@ function loadDeleted(task) {
     const h4 = document.createElement("h4");
     h4.innerHTML = task;
     divTask.appendChild(h4);
+    const divButton = document.createElement("div");
+    divButton.className = "task-btns"
     const divRestore = document.createElement("div");
     divRestore.className = "task-delete-box";
     divRestore.innerHTML = `<a href="#" class="delete-task">
@@ -258,8 +266,9 @@ function loadDeleted(task) {
                             <span class="material-symbols-outlined delete">close</span>
                         </a>`
     delTask.appendChild(divTask);
-    delTask.appendChild(divDel);
-    delTask.appendChild(divRestore);
+    divButton.appendChild(divDel);
+    divButton.appendChild(divRestore);
+    delTask.appendChild(divButton);
     deletedList.insertBefore(delTask, deletedList.children[0]);
 }
 
@@ -428,7 +437,7 @@ function clearDone(e) {
 
 
 function restoreDeletedTask(e) {
-    const task = e.target.parentElement.parentElement.parentElement;
+    const task = e.target.parentElement.parentElement.parentElement.parentElement;
     taskContent = task.children[0].children[0].textContent;
 
     if (e.target.className === "material-symbols-outlined restore") {
@@ -462,7 +471,7 @@ function restoreDeletedTask(e) {
 }
 
 function deleteDeletedTask(e) {
-    const task = e.target.parentElement.parentElement.parentElement;
+    const task = e.target.parentElement.parentElement.parentElement.parentElement;
     taskContent = task.children[0].children[0].textContent;
     if (e.target.className === "material-symbols-outlined delete") {
         if (confirm("Are you sure you want to delete completely this task?")) {
@@ -486,7 +495,7 @@ function getItemsFromDeletedLS() {
 
 
 function doneTask(e) {
-    const task = e.target.parentElement.parentElement.parentElement;
+    const task = e.target.parentElement.parentElement.parentElement.parentElement;
     taskContent = task.children[0].children[0].textContent;
 
     if (e.target.className === "material-symbols-outlined done") {
@@ -494,7 +503,7 @@ function doneTask(e) {
             createDoneTask(task);
             task.remove();
             // Silinecek elemanın içerik adı, storage'da kayıtlı olduğu için bunu çekmek gerekir:
-            deleteTodoFromLS(e.target.parentElement.parentElement.parentElement.children[0].textContent);
+            deleteTodoFromLS(e.target.parentElement.parentElement.parentElement.parentElement.children[0].textContent);
         }
     }
     e.preventDefault();
