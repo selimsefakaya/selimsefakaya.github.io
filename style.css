@@ -103,7 +103,6 @@ body::-webkit-scrollbar {
 .input-box {
     padding:10px 0;
     width:95.61%;
-    display: inline-block;
     margin-right:0.5%;
 }
 
@@ -114,6 +113,9 @@ body::-webkit-scrollbar {
 
 #addTaskForm {
     width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center
 }
 
 #taskName {
@@ -133,14 +135,9 @@ body::-webkit-scrollbar {
     outline-style:solid;
 }
 
-.button-box {
-    display: inline-block;
-}
-
 #addButton {
     width:38px;
     height:38px;
-    margin-top:-3px;
     vertical-align: middle;
     background-color:orange;
     color:white;
@@ -180,8 +177,10 @@ body::-webkit-scrollbar {
     background-color:rgb(248, 240, 233);
     border-top-right-radius: 1px;
     border-top-left-radius: 1px;
-    /* border:1px solid orange; */
     border-bottom: 1px solid orange;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .task-list-h {
@@ -214,10 +213,6 @@ body::-webkit-scrollbar {
     border-color: darkred
 }
 
-#delete-all-box {
-    margin-top:2.5px;
-}
-
 #task-list-ul {
     margin:0;
     padding:0;
@@ -229,8 +224,10 @@ body::-webkit-scrollbar {
     background-color:rgba(248, 240, 233, 0.515);
     border-bottom:1px solid orange;
     transition: all 0.2s;
-    height: auto;
     text-align:justify;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .removed-li:last-child, .done-li:last-child {
@@ -244,16 +241,11 @@ body::-webkit-scrollbar {
 
 .task-li:hover {
     background-color:rgba(248, 190, 82, 0.281);
-
 }
 
 .task-li:last-child, .removed-li:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-}
-
-.task-box, .task-delete-box, .task-done-box {
-    display:inline-block;
 }
 
 .task-box {
@@ -267,7 +259,6 @@ body::-webkit-scrollbar {
 
 .task-delete-box, .task-done-box {
     float:right;
-    margin-top:-2px;
 }
 
 h4 {
@@ -285,7 +276,6 @@ h4 {
     font-weight: 900;
     padding:3px;
     transition: all 0.4s;
-    margin-left:8px;
 }
 
 .delete-task span:hover, .task-done-box span:hover {
@@ -361,7 +351,6 @@ h4 {
 .delete-all-b{
     background-color:red;
     border-color:red;
-    margin-top: -3px;
 }
 
 .delete-all-b span {
@@ -552,9 +541,6 @@ h4 {
     .deleted-tasks {
         margin-bottom: 30px;
     }
-    .task-box{
-        width:70%;
-    }
     .input-box {
         width:90.93%;
     }
@@ -580,8 +566,8 @@ h4 {
     .deleted-tasks {
         margin-bottom: 30px;
     }
-    .task-box{
-        width:70%;
+    .task-li, .removed-li, .done-li  {
+        padding: 10px
     }
     .input-box{
         width:87%;
