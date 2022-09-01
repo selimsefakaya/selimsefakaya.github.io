@@ -541,7 +541,7 @@ h4 {
 
 @media (max-width:768px) and (min-width:541px) {
     body {  
-        width:600px;
+        width:100%;
         padding: 0 15px;
     }
     .deleted-tasks, .done-tasks {
