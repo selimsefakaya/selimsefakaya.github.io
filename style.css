@@ -552,6 +552,9 @@ h4 {
     .deleted-tasks {
         margin-bottom: 30px;
     }
+    .task-box{
+        width:70%;
+    }
     .input-box {
         width:90.93%;
     }
@@ -576,6 +579,9 @@ h4 {
     }
     .deleted-tasks {
         margin-bottom: 30px;
+    }
+    .task-box{
+        width:70%;
     }
     .input-box{
         width:87%;
