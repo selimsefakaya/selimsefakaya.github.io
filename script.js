@@ -462,8 +462,11 @@ function restoreDeletedTask(e) {
         const divADone = document.createElement("div");
         divADone.className = "task-done-box";
         divADone.appendChild(aDone);
-        restTask.appendChild(divDelete);
-        restTask.appendChild(divADone);
+        const divButton = document.createElement("div");
+        divButton.className = "task-btns"
+        divButton.appendChild(divDelete);
+        divButton.appendChild(divADone);
+        restTask.appendChild(divButton);
         taskList.appendChild(restTask);
         deleteTodoFromDeletedLS(taskContent);
     }
