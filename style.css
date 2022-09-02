@@ -145,6 +145,9 @@ body::-webkit-scrollbar {
     border:0;
     cursor: pointer;
     transition: 0.2s;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #addButton:hover {
