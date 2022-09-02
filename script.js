@@ -424,6 +424,7 @@ function clearDeleted(e) {
         }
         clearDeletedLS();
     }
+    e.preventDefault();
 }
 
 function clearDone(e) {
@@ -433,6 +434,7 @@ function clearDone(e) {
         }
         clearDoneLS();
     }
+    e.preventDefault();
 }
 
 
@@ -544,15 +546,24 @@ $("#in-hover-hid").click(function () {
     $("#iconInfo").css("color", "rgb(108,5,50");
     $("#textInfo").css("fontSize", "1rem");
 
-    $("#infoBox").animate(
-        {
-            width: "400px",
-            height: "220px",
-            top: "50%",
-            left: "50%",
-        },
-        400
-    );
+    if (screen.width > 548) {
+        $("#infoBox").animate(
+            {
+                width: "400px",
+                height: "220px",
+            },
+            400
+        );
+    }
+    else {
+        $("#infoBox").animate(
+            {
+                width: "250px",
+                height: "200px",
+            },
+            400
+        );
+    }
 
 
 });
@@ -578,14 +589,13 @@ function closeInfoBox(e) {
     $("#textInfo").css("fontSize", "0");
     $("#infoBox").animate(
         {
+            fontSize: 0,
             width: "0",
             height: "0",
-            top: "4%",
-            left: "105%",
-        }, 400
+        }, 600
 
     )
-    infoBox.fadeOut(400);
+    infoBox.fadeOut(600);
     $(".fa-circle-info").css("color", "white");
     $(".fa-circle-info").css("backgroundColor", "orange");
 
